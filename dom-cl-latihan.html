@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - CCL - Latihan</title>
+</head>
+<body>
+    <label for="bg-color">Warna Latar Belakang</label>
+    <input type="color" id="bg-color" onchange="gantiWarnabekground(this);"><br>
+    <label for="bg-text">Warna Tulisan</label>
+    <input type="color" id="bg-color" onchange="gantiWarnatext(this);"><br>
+
+    <script>
+        document.title = 'Change Color via JS -Latihan';
+        
+        gantiWarnabekground = (e) => {
+            console.log(e);
+            console.log('id:' + e.id);
+            console.log('class:' + e.className);
+            console.log('value / warna dalam hexa#:' +e.value);
+            document.body.style.backgroundColor = e.value;
+        }
+
+        gantiWarnatext = (e) => {
+            document.body.style.color = e.value;
+        }
+    </script>
+</body>
+</html>

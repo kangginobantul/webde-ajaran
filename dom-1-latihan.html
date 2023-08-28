@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-1_Latihan</title>
+</head>
+<body>
+    
+
+    <div id="tampil">
+    </div>
+    <script>
+        //mengubah judul html via js
+        document.writeln('<h3>Menulis judul html via JS</h3>')
+        document.title="Ini judul via JS";
+        tampil = (document.title.length);
+        document.getElementById("tampil").innerHTML = tampil;
+        document.write("Ini dibuat via JS - document.write");
+        document.write('<h3>Menulis html via JS</h3>');
+        //mengubah warna
+        document.body.style.backgroundColor = 'grey';
+        document.body.style.fontFamily = 'helvetica';
+        </script>
+</body>
+</html>

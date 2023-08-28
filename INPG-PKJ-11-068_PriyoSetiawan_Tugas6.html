@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* #paragrafwarna{
+        color: aqua;
+    } */
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INPG-PKJ-11-068_PriyoSetiawan_Tugas6</title>
+</head>
+
+<body>
+    <h2>Tugas pertemuan 6</h2>
+    <span>INPG-PKJ-11-068_PriyoSetiawan_Tugas6</span>
+    <h3>Mewarnai element HTML dengan Javascript</h3>
+    <hr>
+    <h4>Mewarnai satu Paragraf</h4>
+    <p id="paragrafwarna">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.Quo quaerat recusandae qui ullam eaque cumque ea fugit,debitis commodi ipsum illo dolorum consequatur sed laudantium suscipit quis magni,
+        maiores in?
+    </p>
+    <script>
+        
+        function warnaAcak(){
+
+            const kodehex = '0123456789ABCDEF';
+            let hexwarna = '#';
+
+            //buat kode warna hex acak
+            for(i=0; i<6; i++){
+                hexwarna += kodehex[Math.floor(Math.random()*16)]; 
+            }
+
+            return hexwarna;
+
+        }
+
+        function ubahWarna(){
+
+            const paragrafwarna = document.getElementById("paragrafwarna").style;
+
+            paragrafwarna.color = warnaAcak();
+
+        }
+
+        setInterval(ubahWarna,500);
+
+    </script>
+    <hr>
+    <h4>Mewarnai tiap kata dalam Paragraf</h4>
+    <p id="tulisanwarnawarni">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.Quo quaerat recusandae qui ullam eaque cumque ea fugit,debitis commodi ipsum illo dolorum consequatur sed laudantium suscipit quis magni,
+        maiores in?
+    </p>
+    <!-- <button onclick="bikinWarnaWarni()">generate warna</button><br>
+    <p id="nilaiwarnahex"></p> -->
+
+    <script>
+        //test fungsi
+        // bikinWarnaWarni();
+        // mewarnaiText();
+    
+        function bikinWarnaWarni(){
+
+            const angka = '0123456789ABCDEF';
+            let nilaiwarna = '#';
+            
+            for(let i=0; i<6; i++){
+
+                nilaiwarna += angka[Math.floor(Math.random()*16)];
+
+            }
+            return nilaiwarna;
+            
+            // console.log(nilaiwarna);
+       }
+
+       function mewarnaiText(){
+            //masukkan paragraf ke konstanta
+            const paragraf = document.getElementById('tulisanwarnawarni');
+            
+            //memecah setiap kata dalam paragraf dengan penanda spasi
+            const kataKata = paragraf.innerText.split(" ");
+            
+            //masukkan warna ke dalam kata dengan mapping 
+            const warnaiKata = kataKata.map(kata => {
+
+                //ambil nilaiwarna dari fungsi bikinWarnaWarni dan gabungkan dengan kata yang telah di pecah dengan span
+                const nilaiwarna = bikinWarnaWarni();
+                return `<span style="color: ${nilaiwarna};">${kata}</span>`;
+
+            })
+
+            //gabungkan kata kata yang sudah diwarnai dalam satu paragraf dengan tambahkan spasi antar kata
+            paragraf.innerHTML = warnaiKata.join(" ");
+            
+            
+        //console.log(warnaiKata);            
+       }
+
+       setInterval(mewarnaiText, 1000);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #colorChangingText {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <p id="colorChangingText">Ini adalah teks yang akan berubah warna</p>
+
+  <script>
+    const textElement = document.getElementById("colorChangingText");
+
+    function changeTextColor() {
+      const colors = ["red", "green", "blue", "orange", "purple"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      textElement.style.color = randomColor;
+    }
+
+    setInterval(changeTextColor, 1000); // Ubah warna setiap 1000ms (1 detik)
+  </script>
+</body>
+</html>

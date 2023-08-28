@@ -1,0 +1,5 @@
+#GIT
+
+git init
+
+git remote add origin https://github.com/kangginobantul/webde-ajaran.git
